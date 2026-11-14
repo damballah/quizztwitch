@@ -1,0 +1,7 @@
+# Exemple de questions image.
+# Les images sont dans le dossier « images », à côté du fichier du jeu.
+
+[Drapeaux]
+{drapeau-france.png} De quel pays est-ce le drapeau ? = France
+{drapeau-italie.png} De quel pays est-ce le drapeau ? = *L'Italie | L'Irlande | Le Mexique | La Hongrie
+{drapeau-japon.png} De quel pays est-ce le drapeau ? = Japon

@@ -1,0 +1,335 @@
+# ============================================================
+#  QUESTIONS DU QUIZZ
+# ============================================================
+#  [Nom de la catégorie]
+#  Question ouverte = réponse
+#  Question ouverte = réponse | autre réponse acceptée
+#  Choix multiple   = *bonne réponse | choix 2 | choix 3 | choix 4
+#  Question image   = {nom.png} Question ? = réponse
+#                     (image rangée dans le dossier « images », à côté du jeu)
+#
+#  - L'étoile * marque la bonne réponse d'un choix multiple
+#    (il faut exactement 4 choix ; ils sont mélangés à l'écran).
+#  - Majuscules, accents et articles (le, la, les...) sont ignorés.
+#  - Les lignes qui commencent par # sont des commentaires.
+# ============================================================
+
+[Littérature]
+Qui a écrit Les Misérables ? = Victor Hugo | Hugo
+Qui a écrit Le Petit Prince ? = *Antoine de Saint-Exupéry | Jules Verne | Albert Camus | Marcel Pagnol
+Dans quel roman de Jules Verne le capitaine Nemo commande-t-il le Nautilus ? = Vingt mille lieues sous les mers | 20000 lieues sous les mers | 20 000 lieues sous les mers
+Qui est l'auteur de L'Étranger ? = *Albert Camus | Jean-Paul Sartre | André Gide | Boris Vian
+Comment s'appelle le détective créé par Arthur Conan Doyle ? = Sherlock Holmes | Sherlock | Holmes
+Qui a écrit Germinal ? = *Émile Zola | Honoré de Balzac | Gustave Flaubert | Guy de Maupassant
+Quelle romancière a créé le détective Hercule Poirot ? = Agatha Christie | Christie
+Qui a écrit le roman 1984 ? = *George Orwell | Aldous Huxley | Ray Bradbury | Isaac Asimov
+Dans quelle ville italienne se déroule Roméo et Juliette ? = Vérone | Verona
+Quel poète a écrit Les Fleurs du mal ? = Charles Baudelaire | Baudelaire
+Qui a écrit Le Seigneur des anneaux ? = *J. R. R. Tolkien | C. S. Lewis | George R. R. Martin | Terry Pratchett
+Quel est le prénom de Madame Bovary ? = Emma
+Qui a écrit Les Trois Mousquetaires ? = Alexandre Dumas | Dumas
+Lequel de ces personnages ne fait pas partie des trois mousquetaires du titre ? = *D'Artagnan | Athos | Porthos | Aramis
+Qui a écrit Don Quichotte ? = *Miguel de Cervantes | Lope de Vega | Dante Alighieri | Federico García Lorca
+Qui a écrit Bel-Ami et Le Horla ? = Guy de Maupassant | Maupassant
+Dans Harry Potter, comment s'appelle l'école des sorciers ? = Poudlard | Hogwarts
+Qui a écrit Frankenstein ? = *Mary Shelley | Bram Stoker | Edgar Allan Poe | H. G. Wells
+Quel philosophe des Lumières a écrit Candide ? = Voltaire
+Quel fabuliste a écrit Le Corbeau et le Renard ? = Jean de La Fontaine | La Fontaine
+Quelle romancière a créé le personnage de Harry Potter ? = J. K. Rowling | JK Rowling | Rowling
+Qui a écrit Le Tour du monde en quatre-vingts jours ? = Jules Verne | Verne
+Dans quel roman de Victor Hugo rencontre-t-on Quasimodo ? = Notre-Dame de Paris
+Qui a écrit Madame Bovary ? = *Gustave Flaubert | Stendhal | Émile Zola | Marcel Proust
+Quel dramaturge anglais a écrit Hamlet ? = William Shakespeare | Shakespeare
+Qui a écrit Le Comte de Monte-Cristo ? = *Alexandre Dumas | Victor Hugo | Jules Verne | Eugène Sue
+Quel dramaturge français a écrit Le Malade imaginaire ? = Molière
+Qui a écrit À la recherche du temps perdu ? = Marcel Proust | Proust
+À quel poète grec attribue-t-on l'Iliade et l'Odyssée ? = Homère
+Qui a écrit Le Rouge et le Noir ? = *Stendhal | Honoré de Balzac | Gustave Flaubert | Victor Hugo
+
+[Science]
+Quel est le symbole chimique de l'or ? = *Au | Or | Ag | Go
+Quelle planète est surnommée la planète rouge ? = Mars
+Combien d'os compte le squelette d'un adulte ? = *206 | 186 | 226 | 256
+Quel gaz les plantes absorbent-elles pour la photosynthèse ? = Dioxyde de carbone | CO2 | Gaz carbonique
+Quel physicien a formulé la théorie de la relativité ? = Albert Einstein | Einstein
+Quelle est la plus grande planète du système solaire ? = Jupiter
+Quelle est la formule chimique de l'eau ? = H2O
+À quelle température l'eau bout-elle au niveau de la mer, en degrés Celsius ? = *100 | 90 | 110 | 120
+Quel scientifique a découvert la pénicilline ? = *Alexander Fleming | Louis Pasteur | Marie Curie | Robert Koch
+Combien de planètes compte le système solaire ? = 8 | huit
+Quel est l'élément chimique le plus abondant dans l'univers ? = Hydrogène
+Quelle est la vitesse approximative de la lumière dans le vide ? = *300 000 km/s | 150 000 km/s | 30 000 km/s | 1 000 000 km/s
+Quel naturaliste a proposé la théorie de l'évolution par sélection naturelle ? = Charles Darwin | Darwin
+Quel est le plus grand animal vivant sur Terre ? = Baleine bleue | Rorqual bleu
+Quelle particule porte une charge électrique négative ? = *L'électron | Le proton | Le neutron | Le photon
+Quelle étoile se trouve au centre du système solaire ? = Soleil
+Quelle scientifique a reçu deux prix Nobel, en physique puis en chimie ? = Marie Curie | Curie
+Quel métal est liquide à température ambiante ? = Mercure
+Combien de chromosomes possède une cellule humaine ? = *46 | 23 | 44 | 48
+Quel instrument mesure la pression atmosphérique ? = *Le baromètre | Le thermomètre | L'anémomètre | L'hygromètre
+Quelle est l'unité de mesure de la résistance électrique ? = Ohm
+Quelle est la planète la plus proche du Soleil ? = Mercure
+Quel gaz est le plus abondant dans l'air que nous respirons ? = *L'azote | L'oxygène | Le dioxyde de carbone | L'hydrogène
+Quel organe du corps humain produit l'insuline ? = Pancréas
+Combien de dents compte une dentition adulte complète, dents de sagesse comprises ? = *32 | 28 | 30 | 36
+Quel savant anglais a énoncé la loi de la gravitation universelle ? = Isaac Newton | Newton
+Quelle est la formule chimique du sel de table ? = *NaCl | KCl | H2O | CO2
+Quelle planète est célèbre pour ses grands anneaux ? = Saturne
+Quel est l'os le plus long du corps humain ? = Fémur
+Quel scientifique français a mis au point le vaccin contre la rage ? = Louis Pasteur | Pasteur
+
+[Sport]
+Combien de joueurs une équipe de football aligne-t-elle sur le terrain ? = 11 | onze
+Dans quelle ville se sont déroulés les Jeux olympiques d'été de 2024 ? = Paris
+Quel pays a remporté la Coupe du monde de football 1998 ? = France
+Combien de points vaut un essai au rugby à XV ? = *5 | 3 | 4 | 7
+Quel sport pratique-t-on à Roland-Garros ? = Tennis
+Quelle est la distance d'un marathon ? = *42,195 km | 40 km | 45 km | 38,5 km
+Combien de joueurs une équipe de basket aligne-t-elle sur le terrain ? = 5 | cinq
+Dans quel pays le judo a-t-il été inventé ? = Japon
+Combien d'anneaux compte le drapeau olympique ? = 5 | cinq
+Quel sprinteur jamaïcain a couru le 100 mètres en 9,58 secondes en 2009 ? = Usain Bolt | Bolt
+De quelle couleur est le maillot du leader du Tour de France ? = Jaune
+Dans lequel de ces sports peut-on réussir un strike ? = *Le bowling | Le golf | Le curling | Le billard
+Quel pays a remporté la première Coupe du monde de football, en 1930 ? = *L'Uruguay | Le Brésil | L'Argentine | L'Italie
+Quel art martial brésilien mêle danse et combat ? = Capoeira
+Combien de minutes dure un match de football, hors arrêts de jeu et prolongations ? = 90
+Dans quelle ville se joue le tournoi de Wimbledon ? = Londres | London
+Quel boxeur était surnommé « The Greatest » ? = *Mohamed Ali | Mike Tyson | Joe Frazier | George Foreman
+Combien de trous compte un parcours de golf classique ? = 18 | dix-huit
+Dans quel sport Michael Jordan s'est-il illustré ? = Basket | Basketball | Basket-ball
+En quelle année ont eu lieu les premiers Jeux olympiques modernes ? = *1896 | 1900 | 1888 | 1912
+Combien de joueurs une équipe de volley-ball aligne-t-elle sur le terrain ? = 6 | six
+Dans quel sport frappe-t-on un volant avec une raquette ? = Badminton
+Quel pays a remporté la Coupe du monde de football 2018 ? = *La France | La Croatie | L'Allemagne | Le Brésil
+Combien de joueurs une équipe de rugby à XV aligne-t-elle sur le terrain ? = 15 | quinze
+Sur quelle surface se joue le tournoi de Roland-Garros ? = *La terre battue | Le gazon | Le béton | Le parquet
+Dans quelle ville se sont déroulés les Jeux olympiques d'été de 2016 ? = Rio de Janeiro | Rio
+Quel sport de lutte japonais se pratique dans un cercle appelé dohyō ? = Sumo
+Combien de joueurs une équipe de handball aligne-t-elle sur le terrain, gardien compris ? = 7 | sept
+Dans quel pays le rugby est-il né ? = Angleterre | Royaume-Uni | Grande-Bretagne
+Combien de minutes dure un match de rugby à XV ? = *80 | 90 | 60 | 70
+
+[Histoire]
+En quelle année a eu lieu la prise de la Bastille ? = 1789
+Qui a été sacré empereur des Français en 1804 ? = Napoléon | Napoléon Bonaparte | Bonaparte | Napoléon Ier | Napoléon 1er
+En quelle année l'homme a-t-il marché sur la Lune pour la première fois ? = *1969 | 1965 | 1972 | 1959
+Dans quelle ville un mur est-il tombé en novembre 1989 ? = Berlin
+Quel navigateur a atteint l'Amérique en 1492 ? = Christophe Colomb | Colomb
+En quelle année a commencé la Première Guerre mondiale ? = *1914 | 1912 | 1916 | 1918
+Quel roi de France était surnommé le Roi-Soleil ? = Louis XIV | Louis 14
+Quelle civilisation a construit le Machu Picchu ? = *Les Incas | Les Mayas | Les Aztèques | Les Olmèques
+En quelle année s'est terminée la Seconde Guerre mondiale ? = 1945
+Qui a été le premier président de la Cinquième République ? = Charles de Gaulle | De Gaulle
+Quelle reine d'Égypte fut l'alliée de Jules César puis de Marc Antoine ? = Cléopâtre | Cleopatra
+En quelle année Charlemagne a-t-il été couronné empereur ? = *800 | 700 | 900 | 1000
+Quel paquebot a fait naufrage en avril 1912 ? = Titanic
+Quel chef gaulois a été vaincu par Jules César à Alésia ? = Vercingétorix
+Dans quel pays la révolution industrielle a-t-elle commencé ? = *Le Royaume-Uni | La France | L'Allemagne | Les États-Unis
+Quel navigateur portugais a donné son nom au détroit situé au sud de l'Amérique ? = Magellan | Fernand de Magellan
+En quelle année a eu lieu la bataille de Marignan ? = 1515
+Quelle héroïne française a été brûlée à Rouen en 1431 ? = Jeanne d'Arc
+Quel président américain a aboli l'esclavage ? = *Abraham Lincoln | George Washington | Thomas Jefferson | Ulysses Grant
+Dans quelle ville a été signé le traité de paix de 1919 avec l'Allemagne ? = Versailles
+Qui a été le premier empereur romain ? = Auguste | Octave
+Quelle ville romaine a été ensevelie par l'éruption du Vésuve en l'an 79 ? = Pompéi | Herculanum
+Quel roi de France a été guillotiné en 1793 ? = Louis XVI | Louis 16
+Quel pharaon a vu son tombeau découvert en 1922 par Howard Carter ? = Toutankhamon | Toutânkhamon | Tutankhamun
+En quelle année a eu lieu le débarquement de Normandie ? = *1944 | 1942 | 1943 | 1945
+En quelle année a eu lieu la bataille de Waterloo ? = 1815
+Quelle était la capitale de l'Empire byzantin ? = Constantinople | Byzance
+Qui a mis au point l'imprimerie à caractères mobiles en Europe, vers 1450 ? = Gutenberg | Johannes Gutenberg
+Quel président américain a été assassiné à Dallas en 1963 ? = *John F. Kennedy | Abraham Lincoln | Richard Nixon | Franklin Roosevelt
+En quelle année a été signé l'armistice qui a mis fin aux combats de la Première Guerre mondiale ? = 1918
+
+[Jeux vidéo]
+En quelle année est sorti Pac-Man en salle d'arcade ? = *1980 | 1978 | 1983 | 1985
+Qui est le créateur de Mario ? = Shigeru Miyamoto | Miyamoto
+Quel est le nom du hérisson bleu de Sega ? = Sonic
+Qui a créé Tetris ? = *Alexey Pajitnov | Shigeru Miyamoto | Nolan Bushnell | Hideo Kojima
+En quelle année la Game Boy est-elle sortie au Japon ? = 1989
+Comment s'appelle le héros de The Legend of Zelda ? = *Link | Zelda | Ganon | Epona
+Quel studio suédois a créé Minecraft ? = Mojang
+Dans quel jeu croise-t-on des Creepers ? = Minecraft
+Quel est le métier de Mario ? = Plombier
+Quelle entreprise fabrique la PlayStation ? = Sony
+Quel Pokémon porte le numéro 1 du Pokédex ? = *Bulbizarre | Pikachu | Salamèche | Mew
+Dans quelle série de jeux incarne-t-on le Master Chief ? = Halo
+Quel jeu de 1972 simule une partie de tennis de table ? = Pong
+Comment s'appelle l'héroïne de Tomb Raider ? = Lara Croft | Lara
+Quelle a été la dernière console de salon de Sega ? = *La Dreamcast | La Saturn | La Mega Drive | La Master System
+Dans quelle série de jeux trouve-t-on la ville de Los Santos ? = GTA | Grand Theft Auto
+Comment s'appelle le frère de Mario ? = Luigi
+En quelle année est sortie la première PlayStation au Japon ? = *1994 | 1992 | 1996 | 1998
+Quel gorille de Nintendo est apparu en arcade en 1981 ? = Donkey Kong
+Combien y a-t-il de fantômes dans Pac-Man ? = *4 | 3 | 5 | 6
+Quelle entreprise a créé la console Xbox ? = Microsoft
+Dans quel jeu d'arcade de 1978 repousse-t-on des rangées d'extraterrestres qui descendent vers le bas de l'écran ? = Space Invaders
+Comment s'appelle le renard à deux queues, compagnon de Sonic ? = Tails | Miles Prower
+Quel Pokémon jaune de type électrique est la mascotte de la série ? = Pikachu
+Quelle entreprise a développé Fortnite ? = *Epic Games | Valve | Ubisoft | Activision
+Dans quelle série de jeux incarne-t-on Kratos ? = God of War
+Quel éditeur français a créé Rayman et Assassin's Creed ? = Ubisoft
+Comment s'appelle le dinosaure vert qui sert de monture à Mario ? = Yoshi
+Quelle console de Nintendo sortie en 2006 se jouait avec une télécommande à détection de mouvement ? = Wii
+En quelle année est sortie la Nintendo Switch ? = *2017 | 2015 | 2016 | 2018
+
+[Films et séries]
+Qui a réalisé Alien, le huitième passager ? = *Ridley Scott | James Cameron | Stanley Kubrick | John Carpenter
+Quelle voiture sert de machine à remonter le temps dans Retour vers le futur ? = DeLorean | De Lorean
+Quel film de 1982 se déroule à l'intérieur d'un ordinateur ? = Tron
+Qui a réalisé Jurassic Park ? = Steven Spielberg | Spielberg
+Dans Star Wars, qui est le père de Luke Skywalker ? = Dark Vador | Vador | Darth Vader | Anakin Skywalker | Anakin
+Dans quelle série suit-on le professeur de chimie Walter White ? = Breaking Bad
+Quel film de James Cameron sorti en 1997 raconte le naufrage d'un paquebot ? = Titanic
+Dans Friends, comment s'appelle le café où se retrouvent les personnages ? = Central Perk
+Quel acteur incarne Jack Sparrow ? = *Johnny Depp | Orlando Bloom | Brad Pitt | Keanu Reeves
+Dans Matrix, quelle pilule Neo choisit-il ? = *La rouge | La bleue | La verte | La jaune
+Comment s'appelle le héros du Roi Lion ? = Simba
+Dans quelle série s'affrontent les familles Stark et Lannister ? = Game of Thrones | Le Trône de fer | GOT
+Qui a réalisé Pulp Fiction ? = Quentin Tarantino | Tarantino
+Quel acteur joue Léon dans le film de Luc Besson ? = Jean Reno | Reno
+À quelle vitesse, en miles à l'heure, la DeLorean voyage-t-elle dans le temps ? = *88 | 66 | 99 | 121
+Quel film de 1995 est le premier long-métrage entièrement en images de synthèse ? = Toy Story
+Dans quelle ville fictive se déroule Stranger Things ? = Hawkins
+Quel acteur joue le Terminator ? = Arnold Schwarzenegger | Schwarzenegger | Schwarzy
+Quel acteur joue Forrest Gump ? = *Tom Hanks | Tom Cruise | Kevin Costner | Robin Williams
+Dans Le Seigneur des anneaux, quel hobbit porte l'anneau jusqu'au Mordor ? = Frodon | Frodo | Frodon Sacquet
+Comment s'appelle le vaisseau dans Alien, le huitième passager ? = Nostromo
+Dans quelle ville vivent les Simpson ? = Springfield
+Quel acteur incarne Indiana Jones ? = Harrison Ford | Ford
+Dans quel film d'animation de Disney sorti en 2013 les deux sœurs s'appellent Elsa et Anna ? = La Reine des neiges | Frozen
+Comment s'appelle le magicien joué par Ian McKellen dans Le Seigneur des anneaux ? = Gandalf
+Dans quelle série espagnole des braqueurs portent-ils une combinaison rouge et un masque de Dalí ? = La Casa de Papel | Casa de Papel | Money Heist
+Qui a réalisé Psychose et Les Oiseaux ? = *Alfred Hitchcock | Orson Welles | Stanley Kubrick | Billy Wilder
+Dans Le Parrain, quel acteur joue Vito Corleone ? = *Marlon Brando | Al Pacino | Robert De Niro | James Caan
+Dans Star Wars, comment s'appelle le droïde de protocole doré ? = C-3PO | C3PO | Z-6PO | Z6PO
+Quel film de 1975 met en scène un grand requin blanc qui terrorise une station balnéaire ? = Les Dents de la mer | Jaws
+
+[Géographie]
+Quelle est la capitale de l'Australie ? = Canberra
+Quel est le plus long fleuve d'Afrique ? = *Le Nil | Le Congo | Le Niger | Le Zambèze
+Quelle est la capitale du Canada ? = *Ottawa | Toronto | Montréal | Vancouver
+Quelle est la capitale de l'Espagne ? = Madrid
+Quel est le plus haut sommet du monde ? = Everest | Mont Everest
+Quel est le plus grand océan du monde ? = *L'océan Pacifique | L'océan Atlantique | L'océan Indien | L'océan Arctique
+Quelle est la capitale du Japon ? = Tokyo
+Quel est le plus grand pays du monde par sa superficie ? = Russie
+Quel fleuve traverse Paris ? = Seine
+Quelle est la capitale de l'Italie ? = Rome
+Quel est le plus haut sommet des Alpes ? = Mont Blanc
+Sur quel continent se trouve l'Égypte ? = Afrique
+Quelle est la capitale du Brésil ? = *Brasilia | Rio de Janeiro | São Paulo | Salvador
+Quel est le plus grand désert chaud du monde ? = Sahara
+Quelle est la capitale de l'Allemagne ? = Berlin
+Quel pays européen a la forme d'une botte ? = Italie
+Quelle est la capitale des États-Unis ? = *Washington | New York | Los Angeles | Chicago
+Quel fleuve traverse Londres ? = Tamise
+Quelle est la capitale de la Turquie ? = *Ankara | Istanbul | Izmir | Antalya
+Quelle est la plus grande île du monde, hors continents ? = Groenland
+Quelle est la capitale du Portugal ? = Lisbonne
+Dans quel pays se trouve le Kilimandjaro ? = Tanzanie
+Quelle est la capitale de la Suisse ? = *Berne | Zurich | Genève | Lausanne
+Quelle chaîne de montagnes sépare la France de l'Espagne ? = Pyrénées
+Quelle est la capitale de la Russie ? = Moscou
+Quelle mer borde le sud de la France ? = Méditerranée | Mer Méditerranée
+Dans quel pays se trouve la ville de Marrakech ? = Maroc
+Quelle est la capitale de la Chine ? = Pékin | Beijing
+Quel est le plus petit État du monde ? = Vatican
+Quel canal relie l'océan Atlantique à l'océan Pacifique en Amérique centrale ? = Canal de Panama | Panama
+
+[Musique]
+Quel groupe a enregistré Bohemian Rhapsody ? = Queen
+Quel compositeur a écrit la Neuvième Symphonie, qui contient l'Ode à la joie ? = Beethoven | Ludwig van Beethoven
+Combien de cordes compte une guitare classique ? = 6 | six
+Quel chanteur américain était surnommé « le King » ? = Elvis Presley | Elvis | Presley
+De quelle ville anglaise les Beatles sont-ils originaires ? = Liverpool
+Qui a chanté Thriller ? = Michael Jackson | Jackson
+Quel compositeur autrichien a écrit La Flûte enchantée ? = Mozart | Wolfgang Amadeus Mozart
+Combien de touches compte un piano standard ? = *88 | 76 | 61 | 100
+Quelle chanteuse française interprétait La Vie en rose ? = Édith Piaf | Piaf
+Quel duo français casqué a sorti l'album Discovery ? = Daft Punk
+Quel groupe a enregistré Smoke on the Water ? = Deep Purple
+Combien de lignes compte une portée musicale ? = 5 | cinq
+Qui a composé Les Quatre Saisons ? = *Antonio Vivaldi | Jean-Sébastien Bach | Georg Friedrich Haendel | Frédéric Chopin
+Qui était le chanteur du groupe Queen ? = Freddie Mercury | Mercury
+Quel groupe a enregistré Stairway to Heaven ? = Led Zeppelin
+Quelle chanteuse américaine a interprété Like a Virgin ? = Madonna
+Quel chanteur belge a écrit et interprété Ne me quitte pas ? = Jacques Brel | Brel
+Quel groupe a enregistré Another Brick in the Wall ? = Pink Floyd
+Quel groupe a enregistré Smells Like Teen Spirit ? = Nirvana
+Quel chanteur français a interprété Allumer le feu ? = Johnny Hallyday | Johnny | Hallyday
+De quel instrument Louis Armstrong jouait-il ? = Trompette
+Quel groupe irlandais a pour chanteur Bono ? = U2
+Quelle légende jamaïcaine du reggae a chanté No Woman, No Cry ? = Bob Marley | Marley
+Quel groupe suédois a chanté Dancing Queen ? = ABBA
+Qui a composé le Boléro ? = *Maurice Ravel | Claude Debussy | Erik Satie | Georges Bizet
+Quel groupe a enregistré (I Can't Get No) Satisfaction ? = The Rolling Stones | Rolling Stones | Stones
+Quel compositeur français a écrit l'opéra Carmen ? = Georges Bizet | Bizet
+Combien de musiciens compte un quatuor ? = 4 | quatre
+Quelle chanteuse québécoise a interprété My Heart Will Go On ? = Céline Dion | Dion
+Qui a écrit et chanté Imagine en 1971 ? = John Lennon | Lennon
+
+[Animaux et nature]
+Quel est l'animal terrestre le plus rapide ? = Guépard
+Combien de pattes a une araignée ? = *8 | 6 | 10 | 12
+Quel est le plus grand mammifère terrestre ? = Éléphant | Éléphant d'Afrique
+Comment appelle-t-on le petit de la vache ? = Veau
+Quel oiseau incapable de voler vit sur la banquise de l'Antarctique ? = Manchot | Manchot empereur | Pingouin
+Quel est l'animal terrestre le plus haut ? = Girafe
+Combien de cœurs possède une pieuvre ? = *3 | 1 | 2 | 4
+Quel insecte produit le miel ? = Abeille
+Quel est le seul mammifère capable de voler en battant des ailes ? = Chauve-souris
+Comment s'appelle la femelle du cheval ? = Jument
+De quelle plante le panda géant se nourrit-il presque exclusivement ? = Bambou
+Quel reptile est célèbre pour sa capacité à changer de couleur ? = Caméléon
+Combien de pattes ont les insectes ? = 6 | six
+Quel arbre produit des glands ? = Chêne
+Quel est le plus grand félin du monde ? = *Le tigre | Le lion | Le jaguar | Le léopard
+Comment appelle-t-on un animal qui ne se nourrit que de végétaux ? = Herbivore
+Quel marsupial sauteur est l'un des emblèmes de l'Australie ? = Kangourou
+Quel est le plus grand oiseau du monde ? = Autruche
+Quelle est la plus grande forêt tropicale du monde ? = Amazonie | Forêt amazonienne
+Comment appelle-t-on le petit du chien ? = Chiot
+Quel rongeur construit des barrages sur les rivières ? = Castor
+Quel gaz les plantes rejettent-elles lors de la photosynthèse ? = Oxygène | Dioxygène
+Combien de bosses a un dromadaire ? = *1 | 2 | 3 | 0
+Comment appelle-t-on un groupe de loups ? = Meute
+De quel arbre le koala mange-t-il les feuilles ? = Eucalyptus
+Quel est le plus gros poisson du monde ? = Requin-baleine | Requin baleine
+Quel oiseau, souvent représenté avec un rameau d'olivier, symbolise la paix ? = Colombe
+De quel arbre tire-t-on le sirop servi sur les pancakes au Canada ? = Érable
+En quelle saison la plupart des arbres perdent-ils leurs feuilles ? = Automne
+Comment s'appelle la larve du papillon ? = Chenille
+
+[Culture générale]
+Combien de jours compte une année bissextile ? = 366
+Combien de côtés a un hexagone ? = 6 | six
+Quelle est la monnaie du Japon ? = Yen
+Combien y a-t-il de secondes dans une heure ? = *3600 | 360 | 6000 | 1200
+Qui a peint La Joconde ? = Léonard de Vinci | De Vinci | Vinci | Leonardo da Vinci
+Dans quel musée parisien La Joconde est-elle exposée ? = Louvre | Musée du Louvre
+Quelle est la langue officielle du Brésil ? = *Le portugais | L'espagnol | Le français | L'anglais
+Combien de couleurs compte-t-on traditionnellement dans l'arc-en-ciel ? = 7 | sept
+Combien font 7 fois 8 ? = 56
+Quel monument parisien a été construit pour l'Exposition universelle de 1889 ? = Tour Eiffel
+Combien de signes compte le zodiaque ? = 12 | douze
+Quel fromage italien garnit traditionnellement la pizza margherita ? = Mozzarella
+De quel pays la paella est-elle originaire ? = Espagne
+Quel fruit est l'ingrédient principal du guacamole ? = Avocat
+Avec quel fruit fabrique-t-on le vin ? = Raisin
+Combien de lettres compte l'alphabet français ? = 26
+Quel nombre le chiffre romain L représente-t-il ? = *50 | 100 | 500 | 1000
+Quel peintre néerlandais a peint La Nuit étoilée ? = Vincent van Gogh | Van Gogh
+Quelle est la monnaie du Royaume-Uni ? = Livre sterling | Livre
+Quel est le plus petit nombre premier ? = 2 | deux
+Quel jeu de stratégie se joue avec un roi, une dame, des fous et des cavaliers ? = Échecs
+Combien de cases compte un échiquier ? = *64 | 81 | 100 | 49
+Quel sculpteur français a réalisé Le Penseur ? = Auguste Rodin | Rodin
+Quelle couleur obtient-on en mélangeant du bleu et du jaune ? = Vert
+Quel inventeur américain est célèbre pour le phonographe et l'ampoule électrique à incandescence ? = Thomas Edison | Edison
+Quel jour célèbre-t-on la fête nationale française ? = 14 juillet | quatorze juillet
+Quel peintre espagnol a réalisé Guernica ? = Pablo Picasso | Picasso
+Quelle est la racine carrée de 81 ? = 9 | neuf
+Qui a peint le plafond de la chapelle Sixtine ? = *Michel-Ange | Raphaël | Léonard de Vinci | Botticelli
+Quelle épice donne sa couleur jaune au curry ? = Curcuma
