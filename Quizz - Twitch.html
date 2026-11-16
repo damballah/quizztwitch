@@ -718,7 +718,7 @@ function startGame(){
   if (S.cfg.mode==='sudden'){ S.round='sudden'; S.reserve=pool; S.list=[]; S.sd={alive:new Map(),open:true,n:0,points:true,out:[]}; }
   else { S.round='normal'; S.list=pool; S.sd=null; }
   S.idx=-1; S.teams=new Map(); S.vs={me:0,chat:0}; S.bets=new Map(); S.banner=''; S.view='game'; S.seasonDone=false;
-  if (!$('keep').checked) S.scores=new Map();
+  if (!$('keep').checked){ S.scores=new Map(); store.set('scores','[]'); }   // remise à zéro enregistrée tout de suite
   for (const s of S.scores.values()){ s.streak=0; s.game=0; }
   // Joker 50/50 : tiré au sort sur quelques questions à choix multiple
   const qcm = S.list.map((q,i)=>q.type==='qcm'?i:-1).filter(i=>i>=0);
