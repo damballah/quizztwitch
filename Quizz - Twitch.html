@@ -138,7 +138,8 @@ button:active{transform:translate(.15rem,.15rem);box-shadow:.1rem .1rem 0 rgba(0
 /* ---------- Équipes, duel, saison, mort subite ---------- */
 #rank{display:flex;flex-direction:column}
 #rankList{flex:1;min-height:0;overflow:hidden}
-#btnSeason{align-self:center;margin-top:.6rem;padding:.5rem .9rem;font-size:calc(.7rem*var(--ds))}
+#rankBtns{align-self:center;display:flex;gap:.8rem;margin-top:.6rem}
+#rankBtns button{padding:.5rem .9rem;font-size:calc(.7rem*var(--ds))}
 #duel{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2rem .5rem;font-family:var(--fd);font-size:calc(.85rem*var(--ds));
   color:var(--a3);margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:.15rem solid var(--line)}
 #duel small{flex-basis:100%;text-align:center;font-family:var(--fb);font-size:calc(1.3rem*var(--bs));color:var(--dim)}
@@ -303,7 +304,7 @@ textarea:focus{outline:none;border-color:var(--a3)}
           <div id="duel" class="hidden"></div>
           <div id="rankEmpty">Aucun point pour l'instant</div>
           <ol id="rankList"></ol>
-          <button id="btnSeason" type="button">SAISON</button>
+          <div id="rankBtns"><button id="btnSeason" type="button">SAISON</button><button id="btnTcc" type="button" title="Toutes catégories confondues">TCC</button></div>
         </div>
         <div id="cam" class="px">WEBCAM</div>
       </aside>
@@ -535,6 +536,14 @@ Object.assign(S,{
   banner:'', view:'game', seasonDone:false
 });
 let season=new Map();          // classement de saison : login -> {name, pts, games, wins}
+// Classements et saisons sont rangés par catégorie ('' = toutes les catégories)
+let scoreCat='';
+function readTable(key){
+  try{ const o=JSON.parse(store.get(key)||'{}'); return (o && typeof o==='object' && !Array.isArray(o)) ? o : {}; }catch(e){ return {}; }
+}
+function loadScores(cat){ const a=readTable('scoresCat')[cat]; return new Map(Array.isArray(a)?a:[]); }
+function saveScores(){ const o=readTable('scoresCat'); o[scoreCat]=[...S.scores]; store.set('scoresCat',JSON.stringify(o)); }
+const catLabel = c => c ? c : 'Toutes les catégories';
 const HINT_AT = [.35,.50,.65,.80];         // moments du chrono où tombe un indice (ou où l'image se précise)
 const HINT_CHANCE = .5;                  // part des questions ouvertes qui ont droit aux indices (1 = toutes)
 const PIX = [16,26,42];                  // largeur de l'image en gros pixels, étape par étape (ensuite elle est nette)
@@ -718,7 +727,10 @@ function startGame(){
   if (S.cfg.mode==='sudden'){ S.round='sudden'; S.reserve=pool; S.list=[]; S.sd={alive:new Map(),open:true,n:0,points:true,out:[]}; }
   else { S.round='normal'; S.list=pool; S.sd=null; }
   S.idx=-1; S.teams=new Map(); S.vs={me:0,chat:0}; S.bets=new Map(); S.banner=''; S.view='game'; S.seasonDone=false;
-  if (!$('keep').checked){ S.scores=new Map(); store.set('scores','[]'); }   // remise à zéro enregistrée tout de suite
+  scoreCat = cat;                                    // le classement suit la catégorie jouée
+  if ($('keep').checked) S.scores = loadScores(cat);
+  else { S.scores=new Map(); saveScores(); }         // remise à zéro enregistrée tout de suite
+  loadSeason();
   for (const s of S.scores.values()){ s.streak=0; s.game=0; }
   // Joker 50/50 : tiré au sort sur quelques questions à choix multiple
   const qcm = S.list.map((q,i)=>q.type==='qcm'?i:-1).filter(i=>i>=0);
@@ -957,13 +969,21 @@ function reveal(){
     S.winners.forEach(award);
     if (S.cfg.mode==='versus'){                      // un point par question pour le streamer et pour le chat
       const meGood = S.me.done && (q.type==='qcm' ? S.me.choice===q.correct : matches(S.me.buf,q.answers));
-      if (meGood) S.vs.me++;
+      if (meGood){
+        S.vs.me++;
+        // Le streamer marque aussi des points au classement et à la saison, comme un joueur
+        const el = S.me.t - S.tStart, firstChat = Math.min(Infinity,...S.winners.map(w=>S.answered.get(w.login).t));
+        const pts = q.type==='qcm' ? 5+Math.round(5*Math.max(0,1-el/dur))
+                  : (S.me.t < firstChat ? 10-S.steps : 5);     // 10 s'il a trouvé avant le chat, 5 sinon
+        const w = {login:channel, name:channel, pts};
+        award(w); S.winners.push(w);
+      } else { const s=S.scores.get(channel); if (s) s.streak=0; }   // raté : sa série repart à zéro
       if (chatGood) S.vs.chat++;
       notes.push('STREAMER : '+(meGood?'bonne réponse, +1':S.me.done?'mauvaise réponse':'pas de réponse'),
                  'CHAT : '+(chatGood?'bonne réponse, +1':'raté'));
     }
   }
-  store.set('scores',JSON.stringify([...S.scores]));
+  saveScores();
   $('hint').textContent='';
   if (S.round==='sudden') $('winners').textContent=''; else showWinners(true);
   for (const n of notes){ const d=document.createElement('div'); d.textContent=n; $('winners').append(d); }
@@ -991,9 +1011,11 @@ function showWinners(final){
 function rankingEntries(){ return [...S.scores].sort((a,b)=>b[1].pts-a[1].pts || a[1].name.localeCompare(b[1].name)); }
 function ranking(){ return rankingEntries().map(e=>e[1]); }
 function renderRank(){
-  const seasonView = S.view==='season', sdView = !seasonView && S.round==='sudden' && S.sd && S.phase!=='final';
+  // season : saison de la catégorie jouée · tcc : saison toutes catégories confondues (les meilleurs joueurs tout court)
+  const seasonView = S.view==='season' || S.view==='tcc', sdView = !seasonView && S.round==='sudden' && S.sd && S.phase!=='final';
   $('rankTitle').textContent = seasonView ? 'SAISON' : sdView ? 'MORT SUBITE' : 'CLASSEMENT';
-  $('btnSeason').textContent = seasonView ? 'PARTIE' : 'SAISON';
+  $('btnSeason').textContent = S.view==='season' ? 'PARTIE' : 'SAISON';
+  $('btnTcc').textContent = S.view==='tcc' ? 'PARTIE' : 'TCC';
   // Score des équipes ou du duel, au-dessus de la liste
   const duel=$('duel'); duel.textContent='';
   const cell=(txt,cls)=>{ const s=document.createElement('span'); s.textContent=txt; if (cls) s.className=cls; duel.append(s); };
@@ -1001,10 +1023,12 @@ function renderRank(){
     const [r,b]=teamScores(); cell('ROUGE '+r,'tr'); cell(b+' BLEU','tb');
     const sm=document.createElement('small'); sm.textContent='Tapez !rouge ou !bleu'; duel.append(sm);
   } else if (!seasonView && S.cfg.mode==='versus'){ cell(channel.toUpperCase()+' '+S.vs.me); cell(S.vs.chat+' CHAT'); }
+  if (seasonView){ const sm=document.createElement('small'); sm.textContent = S.view==='tcc' ? 'Toutes catégories confondues' : catLabel(scoreCat); duel.append(sm); }
   duel.classList.toggle('hidden',!duel.childNodes.length);
   // Lignes à afficher : saison, survivants de la mort subite, ou classement de la partie
   let rows;
-  if (seasonView) rows=[...season.values()].sort((a,b)=>b.pts-a.pts || a.name.localeCompare(b.name)).map(e=>({name:e.name,pts:e.pts}));
+  const table = S.view==='tcc' ? new Map(readTable('seasonCat')['']||[]) : season;
+  if (seasonView) rows=[...table.values()].sort((a,b)=>b.pts-a.pts || a.name.localeCompare(b.name)).map(e=>({name:e.name,pts:e.pts}));
   else if (sdView) rows=[...S.sd.alive].map(([l,n])=>({name:n,pts:(S.scores.get(l)||{}).pts||0}))
                         .concat(S.sd.out.map(n=>({name:n,pts:'',cls:'outp'})));
   else rows=rankingEntries().map(([l,s])=>({name:s.name,pts:s.pts,streak:S.cfg.streaks?s.streak:0,
@@ -1024,20 +1048,25 @@ function renderRank(){
 }
 
 // Classement de saison : les points de chaque partie terminée s'y ajoutent
-function loadSeason(){
-  try{ const a=JSON.parse(store.get('season')||'[]'); if (Array.isArray(a)) season=new Map(a); }catch(e){}
-}
+function loadSeason(){ const a=readTable('seasonCat')[scoreCat]; season=new Map(Array.isArray(a)?a:[]); }
 function saveSeasonGame(){
   if (S.seasonDone) return;
   S.seasonDone=true;
   const played=[...S.scores].filter(([,s])=>(s.game||0)!==0);
   const best=Math.max(0,...played.map(([,s])=>s.game));
-  for (const [l,s] of played){
-    const e=season.get(l)||{name:s.name,pts:0,games:0,wins:0};
-    e.name=s.name; e.pts+=Math.max(0,s.game); e.games++; if (best>0 && s.game===best) e.wins++;
-    season.set(l,e);
+  // La partie compte dans la saison de sa catégorie, et aussi dans la saison « toutes catégories »
+  const o=readTable('seasonCat');
+  for (const key of new Set([scoreCat,''])){
+    const m=new Map(Array.isArray(o[key])?o[key]:[]);
+    for (const [l,s] of played){
+      const e=m.get(l)||{name:s.name,pts:0,games:0,wins:0};
+      e.name=s.name; e.pts+=Math.max(0,s.game); e.games++; if (best>0 && s.game===best) e.wins++;
+      m.set(l,e);
+    }
+    o[key]=[...m];
   }
-  store.set('season',JSON.stringify([...season]));
+  store.set('seasonCat',JSON.stringify(o));
+  loadSeason();
 }
 
 // Fin de la mort subite : le dernier en jeu touche le gros bonus
@@ -1051,7 +1080,7 @@ function endSudden(){
   S.banner = !alive.length ? 'MORT SUBITE : AUCUN SURVIVANT'
            : alive.length===1 ? 'MORT SUBITE : '+names+' L\'EMPORTE, +50 POINTS'
            : 'MORT SUBITE : '+alive.length+' SURVIVANTS, +20 POINTS CHACUN';
-  store.set('scores',JSON.stringify([...S.scores]));
+  saveScores();
   finale();
 }
 
@@ -1246,7 +1275,7 @@ async function readFile(f){
 }
 function refreshKeep(){
   $('keepWrap').classList.remove('hidden');          // toujours visible, même sans score à garder
-  $('keepTxt').textContent='Garder les scores ('+S.scores.size+')';
+  $('keepTxt').textContent='Garder les scores ('+loadScores($('category').value).size+')';   // ceux de la catégorie choisie
 }
 
 // ---------- Branchements ----------
@@ -1261,6 +1290,7 @@ document.addEventListener('drop',e=>{
 });
 $('channel').onchange = connect;
 $('btnPlay').onclick = startGame;
+$('category').addEventListener('change',refreshKeep);
 $('btnMenu').onclick = backToMenu;
 function sendFake(){
   const v=$('fake').value, i=v.indexOf(':');
@@ -1323,11 +1353,11 @@ document.addEventListener('keydown',e=>{
   // Chat contre le streamer : sa réponse se tape ici, et rien ne s'affiche avant la révélation
   if (S.cfg.mode==='versus' && S.phase==='question' && !S.me.done && k!=='arrowright'){
     if (S.cur.type==='qcm'){
-      if (/^[a-d]$/.test(k)){ e.preventDefault(); S.me.choice=k.charCodeAt(0)-97; S.me.done=true; beep(600,.05); meInfo(); return; }
+      if (/^[a-d]$/.test(k)){ e.preventDefault(); S.me.choice=k.charCodeAt(0)-97; S.me.done=true; S.me.t=Date.now(); beep(600,.05); meInfo(); return; }
     } else {
       e.preventDefault();
       if (k==='enter'){
-        if (S.me.buf.trim()){ S.me.done=true; beep(600,.05); meInfo(); if (S.winners.length) reveal(); }
+        if (S.me.buf.trim()){ S.me.done=true; S.me.t=Date.now(); beep(600,.05); meInfo(); if (S.winners.length) reveal(); }
       } else if (k==='backspace') S.me.buf=S.me.buf.slice(0,-1);
       else if (k==='escape') S.me.buf='';
       else if (e.key.length===1) S.me.buf+=e.key;
@@ -1339,11 +1369,13 @@ document.addEventListener('keydown',e=>{
   else if (k==='t') $('host').classList.toggle('hidden');
 });
 $('btnSeason').onclick = () => { S.view = S.view==='season' ? 'game' : 'season'; renderRank(); $('btnSeason').blur(); };
+$('btnTcc').onclick    = () => { S.view = S.view==='tcc' ? 'game' : 'tcc'; renderRank(); $('btnTcc').blur(); };
 // Vider la saison demande deux clics, pour éviter les accidents
 let resetArmed=0;
 $('btnSeasonReset').onclick = () => {
   const b=$('btnSeasonReset');
-  if (Date.now()-resetArmed<4000){ season=new Map(); store.del('season'); resetArmed=0; b.textContent='SAISON VIDÉE'; renderRank(); }
+  if (Date.now()-resetArmed<4000){ season=new Map(); store.del('seasonCat'); store.del('season');   // toutes les catégories
+    resetArmed=0; b.textContent='SAISON VIDÉE'; renderRank(); }
   else { resetArmed=Date.now(); b.textContent='CONFIRMER ?'; setTimeout(()=>{ if (resetArmed) b.textContent='VIDER LA SAISON'; },4000); }
   b.blur();
 };
@@ -1360,8 +1392,12 @@ window.addEventListener('resize',refit);
             if (c.hints!==undefined){ $('hints').checked=!!c.hints; $('streaks').checked=!!c.streaks; $('jokers').value=c.jokers; }
             if (c.mode){ $('mode').value=c.mode; $('finalRound').value=c.final||'none'; }
             $('keep').checked=!!c.keep; }
-    const sc=JSON.parse(store.get('scores')||'null');
-    if (Array.isArray(sc)) S.scores=new Map(sc);
+    // Anciennes versions : un seul classement et une seule saison, rangés dans « toutes les catégories »
+    for (const [old,neu] of [['scores','scoresCat'],['season','seasonCat']]){
+      const a=JSON.parse(store.get(old)||'null');
+      if (Array.isArray(a) && !store.get(neu)) store.set(neu,JSON.stringify({'':a}));
+      store.del(old);
+    }
     const t=JSON.parse(store.get('theme')||'null');
     if (t) for (const k of Object.keys(T)) if (typeof t[k]===typeof T[k]) T[k]=t[k];
     if (T.title==='QUIZ RÉTRO') T.title=DEFAULT_TITLE;          // ancien titre par défaut
